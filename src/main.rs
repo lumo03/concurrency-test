@@ -1,3 +1,4 @@
+mod helper_methods;
 mod mutex_vec;
 
 #[tokio::main]

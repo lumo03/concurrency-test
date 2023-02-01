@@ -1,10 +1,6 @@
-use std::{
-    sync::{Arc, Mutex},
-    thread,
-    time::Duration,
-};
+use std::sync::{Arc, Mutex};
 
-use rand::Rng;
+use crate::helper_methods::get_random_number;
 use tokio::task;
 
 pub async fn mutex_vec() {
@@ -27,9 +23,4 @@ pub async fn mutex_vec() {
     }
 
     println!("Numbers: {:?}", *numbers.lock().unwrap());
-}
-
-pub async fn get_random_number() -> u32 {
-    thread::sleep(Duration::from_millis(2000));
-    rand::thread_rng().gen_range(0..100)
 }
